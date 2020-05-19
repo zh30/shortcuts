@@ -1,0 +1,479 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Shortcuts</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="常用快捷键集合">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li class="chapter-item expanded "><a href="ohmyzsh.html"><strong aria-hidden="true">2.</strong> Oh My Zsh</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ohmyzsh/git.html"><strong aria-hidden="true">2.1.</strong> git plugin</a></li><li class="chapter-item expanded "><a href="ohmyzsh/git-flow.html"><strong aria-hidden="true">2.2.</strong> git-flow plugin</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Shortcuts</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        <a href="https://github.com/zhanghecool/shortcuts" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#shortcuts-概述" id="shortcuts-概述">Shortcuts 概述</a></h1>
+<p>快捷键，又称为快速键、组合键或热键，指通过某些特定的按键、按键顺序或按键组合来完成一个操作，很多快捷键往往与如 <code>Ctrl</code> 键、<code>Shift</code> 键、<code>Alt</code> 键、<code>Fn</code> 键以及 Windows 平台下的 <code>Win</code> 键和 Mac 机上的 <code>⌘ Cmd</code> 鍵（曾有Meta键）等配合使用。</p>
+<p>这个项目是以提高自己工作效率为目的，将工作中常用到的工具或者软件的快捷键总结下来，列个清单方便以后查找。</p>
+<h1><a class="header" href="#oh-my-zsh" id="oh-my-zsh">Oh My Zsh</a></h1>
+<p>Oh My Zsh 是一个令人愉悦的、开源的、社区驱动的框架，用于管理您的 Zsh 配置。它捆绑了成千上万个有用的功能、助手、插件、主题以及一些让您兴奋的东西...</p>
+<p>以下介绍几款我常用的插件：</p>
+<ul>
+<li><a href="ohmyzsh/git.html">git plugin</a></li>
+<li><a href="ohmyzsh/git-flow.html">git-flow plugin</a></li>
+</ul>
+<h1><a class="header" href="#git-plugin" id="git-plugin">git plugin</a></h1>
+<p>The git plugin provides many <a href="ohmyzsh/git.html#aliases">aliases</a> and a few useful <a href="ohmyzsh/git.html#functions">functions</a>.</p>
+<p>To use it, add <code>git</code> to the plugins array in your zshrc file:</p>
+<pre><code class="language-zsh">plugins=(... git)
+</code></pre>
+<h2><a class="header" href="#aliases" id="aliases">Aliases</a></h2>
+<table><thead><tr><th align="left">Alias</th><th align="left">Command</th></tr></thead><tbody>
+<tr><td align="left">g</td><td align="left">git</td></tr>
+<tr><td align="left">ga</td><td align="left">git add</td></tr>
+<tr><td align="left">gaa</td><td align="left">git add --all</td></tr>
+<tr><td align="left">gapa</td><td align="left">git add --patch</td></tr>
+<tr><td align="left">gau</td><td align="left">git add --update</td></tr>
+<tr><td align="left">gav</td><td align="left">git add --verbose</td></tr>
+<tr><td align="left">gap</td><td align="left">git apply</td></tr>
+<tr><td align="left">gb</td><td align="left">git branch</td></tr>
+<tr><td align="left">gba</td><td align="left">git branch -a</td></tr>
+<tr><td align="left">gbd</td><td align="left">git branch -d</td></tr>
+<tr><td align="left">gbda</td><td align="left">git branch --no-color --merged | command grep -vE &quot;^(+|*|\s*(master|develop|dev)\s*$)&quot; | command xargs -n 1 git branch -d</td></tr>
+<tr><td align="left">gbD</td><td align="left">git branch -D</td></tr>
+<tr><td align="left">gbl</td><td align="left">git blame -b -w</td></tr>
+<tr><td align="left">gbnm</td><td align="left">git branch --no-merged</td></tr>
+<tr><td align="left">gbr</td><td align="left">git branch --remote</td></tr>
+<tr><td align="left">gbs</td><td align="left">git bisect</td></tr>
+<tr><td align="left">gbsb</td><td align="left">git bisect bad</td></tr>
+<tr><td align="left">gbsg</td><td align="left">git bisect good</td></tr>
+<tr><td align="left">gbsr</td><td align="left">git bisect reset</td></tr>
+<tr><td align="left">gbss</td><td align="left">git bisect start</td></tr>
+<tr><td align="left">gc</td><td align="left">git commit -v</td></tr>
+<tr><td align="left">gc!</td><td align="left">git commit -v --amend</td></tr>
+<tr><td align="left">gcn!</td><td align="left">git commit -v --no-edit --amend</td></tr>
+<tr><td align="left">gca</td><td align="left">git commit -v -a</td></tr>
+<tr><td align="left">gca!</td><td align="left">git commit -v -a --amend</td></tr>
+<tr><td align="left">gcan!</td><td align="left">git commit -v -a --no-edit --amend</td></tr>
+<tr><td align="left">gcans!</td><td align="left">git commit -v -a -s --no-edit --amend</td></tr>
+<tr><td align="left">gcam</td><td align="left">git commit -a -m</td></tr>
+<tr><td align="left">gcsm</td><td align="left">git commit -s -m</td></tr>
+<tr><td align="left">gcb</td><td align="left">git checkout -b</td></tr>
+<tr><td align="left">gcf</td><td align="left">git config --list</td></tr>
+<tr><td align="left">gcl</td><td align="left">git clone --recurse-submodules</td></tr>
+<tr><td align="left">gclean</td><td align="left">git clean -id</td></tr>
+<tr><td align="left">gpristine</td><td align="left">git reset --hard &amp;&amp; git clean -dffx</td></tr>
+<tr><td align="left">gcm</td><td align="left">git checkout master</td></tr>
+<tr><td align="left">gcd</td><td align="left">git checkout develop</td></tr>
+<tr><td align="left">gcmsg</td><td align="left">git commit -m</td></tr>
+<tr><td align="left">gco</td><td align="left">git checkout</td></tr>
+<tr><td align="left">gcount</td><td align="left">git shortlog -sn</td></tr>
+<tr><td align="left">gcp</td><td align="left">git cherry-pick</td></tr>
+<tr><td align="left">gcpa</td><td align="left">git cherry-pick --abort</td></tr>
+<tr><td align="left">gcpc</td><td align="left">git cherry-pick --continue</td></tr>
+<tr><td align="left">gcs</td><td align="left">git commit -S</td></tr>
+<tr><td align="left">gd</td><td align="left">git diff</td></tr>
+<tr><td align="left">gdca</td><td align="left">git diff --cached</td></tr>
+<tr><td align="left">gdcw</td><td align="left">git diff --cached --word-diff</td></tr>
+<tr><td align="left">gdct</td><td align="left">git describe --tags $(git rev-list --tags --max-count=1)</td></tr>
+<tr><td align="left">gds</td><td align="left">git diff --staged</td></tr>
+<tr><td align="left">gdt</td><td align="left">git diff-tree --no-commit-id --name-only -r</td></tr>
+<tr><td align="left">gdv</td><td align="left">git diff -w $@ | view -</td></tr>
+<tr><td align="left">gdw</td><td align="left">git diff --word-diff</td></tr>
+<tr><td align="left">gf</td><td align="left">git fetch</td></tr>
+<tr><td align="left">gfa</td><td align="left">git fetch --all --prune</td></tr>
+<tr><td align="left">gfg</td><td align="left">git ls-files | grep</td></tr>
+<tr><td align="left">gfo</td><td align="left">git fetch origin</td></tr>
+<tr><td align="left">gg</td><td align="left">git gui citool</td></tr>
+<tr><td align="left">gga</td><td align="left">git gui citool --amend</td></tr>
+<tr><td align="left">ggf</td><td align="left">git push --force origin $(current_branch)</td></tr>
+<tr><td align="left">ggfl</td><td align="left">git push --force-with-lease origin $(current_branch)</td></tr>
+<tr><td align="left">ggl</td><td align="left">git pull origin $(current_branch)</td></tr>
+<tr><td align="left">ggp</td><td align="left">git push origin $(current_branch)</td></tr>
+<tr><td align="left">ggpnp</td><td align="left">ggl &amp;&amp; ggp</td></tr>
+<tr><td align="left">ggpull</td><td align="left">git pull origin &quot;$(git_current_branch)&quot;</td></tr>
+<tr><td align="left">ggpur</td><td align="left">ggu</td></tr>
+<tr><td align="left">ggpush</td><td align="left">git push origin &quot;$(git_current_branch)&quot;</td></tr>
+<tr><td align="left">ggsup</td><td align="left">git branch --set-upstream-to=origin/$(git_current_branch)</td></tr>
+<tr><td align="left">ggu</td><td align="left">git pull --rebase origin $(current_branch)</td></tr>
+<tr><td align="left">gpsup</td><td align="left">git push --set-upstream origin $(git_current_branch)</td></tr>
+<tr><td align="left">ghh</td><td align="left">git help</td></tr>
+<tr><td align="left">gignore</td><td align="left">git update-index --assume-unchanged</td></tr>
+<tr><td align="left">gignored</td><td align="left">git ls-files -v | grep &quot;^[[:lower:]]&quot;</td></tr>
+<tr><td align="left">git-svn-dcommit-push</td><td align="left">git svn dcommit &amp;&amp; git push github master:svntrunk</td></tr>
+<tr><td align="left">gk</td><td align="left">gitk --all --branches</td></tr>
+<tr><td align="left">gke</td><td align="left">gitk --all $(git log -g --pretty=%h)</td></tr>
+<tr><td align="left">gl</td><td align="left">git pull</td></tr>
+<tr><td align="left">glg</td><td align="left">git log --stat</td></tr>
+<tr><td align="left">glgp</td><td align="left">git log --stat -p</td></tr>
+<tr><td align="left">glgg</td><td align="left">git log --graph</td></tr>
+<tr><td align="left">glgga</td><td align="left">git log --graph --decorate --all</td></tr>
+<tr><td align="left">glgm</td><td align="left">git log --graph --max-count=10</td></tr>
+<tr><td align="left">glo</td><td align="left">git log --oneline --decorate</td></tr>
+<tr><td align="left">glol</td><td align="left">git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'</td></tr>
+<tr><td align="left">glols</td><td align="left">git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --stat</td></tr>
+<tr><td align="left">glod</td><td align="left">git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)&lt;%an&gt;%Creset'</td></tr>
+<tr><td align="left">glods</td><td align="left">git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)&lt;%an&gt;%Creset' --date=short</td></tr>
+<tr><td align="left">glola</td><td align="left">git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --all</td></tr>
+<tr><td align="left">glog</td><td align="left">git log --oneline --decorate --graph</td></tr>
+<tr><td align="left">gloga</td><td align="left">git log --oneline --decorate --graph --all</td></tr>
+<tr><td align="left">glp</td><td align="left"><code>_git_log_prettily</code></td></tr>
+<tr><td align="left">gm</td><td align="left">git merge</td></tr>
+<tr><td align="left">gmom</td><td align="left">git merge origin/master</td></tr>
+<tr><td align="left">gmt</td><td align="left">git mergetool --no-prompt</td></tr>
+<tr><td align="left">gmtvim</td><td align="left">git mergetool --no-prompt --tool=vimdiff</td></tr>
+<tr><td align="left">gmum</td><td align="left">git merge upstream/master</td></tr>
+<tr><td align="left">gma</td><td align="left">git merge --abort</td></tr>
+<tr><td align="left">gp</td><td align="left">git push</td></tr>
+<tr><td align="left">gpd</td><td align="left">git push --dry-run</td></tr>
+<tr><td align="left">gpf</td><td align="left">git push --force-with-lease</td></tr>
+<tr><td align="left">gpf!</td><td align="left">git push --force</td></tr>
+<tr><td align="left">gpoat</td><td align="left">git push origin --all &amp;&amp; git push origin --tags</td></tr>
+<tr><td align="left">gpu</td><td align="left">git push upstream</td></tr>
+<tr><td align="left">gpv</td><td align="left">git push -v</td></tr>
+<tr><td align="left">gr</td><td align="left">git remote</td></tr>
+<tr><td align="left">gra</td><td align="left">git remote add</td></tr>
+<tr><td align="left">grb</td><td align="left">git rebase</td></tr>
+<tr><td align="left">grba</td><td align="left">git rebase --abort</td></tr>
+<tr><td align="left">grbc</td><td align="left">git rebase --continue</td></tr>
+<tr><td align="left">grbd</td><td align="left">git rebase develop</td></tr>
+<tr><td align="left">grbi</td><td align="left">git rebase -i</td></tr>
+<tr><td align="left">grbm</td><td align="left">git rebase master</td></tr>
+<tr><td align="left">grbs</td><td align="left">git rebase --skip</td></tr>
+<tr><td align="left">grev</td><td align="left">git revert</td></tr>
+<tr><td align="left">grh</td><td align="left">git reset</td></tr>
+<tr><td align="left">grhh</td><td align="left">git reset --hard</td></tr>
+<tr><td align="left">groh</td><td align="left">git reset origin/$(git_current_branch) --hard</td></tr>
+<tr><td align="left">grm</td><td align="left">git rm</td></tr>
+<tr><td align="left">grmc</td><td align="left">git rm --cached</td></tr>
+<tr><td align="left">grmv</td><td align="left">git remote rename</td></tr>
+<tr><td align="left">grrm</td><td align="left">git remote remove</td></tr>
+<tr><td align="left">grs</td><td align="left">git restore</td></tr>
+<tr><td align="left">grset</td><td align="left">git remote set-url</td></tr>
+<tr><td align="left">grss</td><td align="left">git restore --source</td></tr>
+<tr><td align="left">grt</td><td align="left">cd &quot;$(git rev-parse --show-toplevel || echo .)&quot;</td></tr>
+<tr><td align="left">gru</td><td align="left">git reset --</td></tr>
+<tr><td align="left">grup</td><td align="left">git remote update</td></tr>
+<tr><td align="left">grv</td><td align="left">git remote -v</td></tr>
+<tr><td align="left">gsb</td><td align="left">git status -sb</td></tr>
+<tr><td align="left">gsd</td><td align="left">git svn dcommit</td></tr>
+<tr><td align="left">gsh</td><td align="left">git show</td></tr>
+<tr><td align="left">gsi</td><td align="left">git submodule init</td></tr>
+<tr><td align="left">gsps</td><td align="left">git show --pretty=short --show-signature</td></tr>
+<tr><td align="left">gsr</td><td align="left">git svn rebase</td></tr>
+<tr><td align="left">gss</td><td align="left">git status -s</td></tr>
+<tr><td align="left">gst</td><td align="left">git status</td></tr>
+<tr><td align="left">gsta</td><td align="left">git stash push</td></tr>
+<tr><td align="left">gsta</td><td align="left">git stash save</td></tr>
+<tr><td align="left">gstaa</td><td align="left">git stash apply</td></tr>
+<tr><td align="left">gstc</td><td align="left">git stash clear</td></tr>
+<tr><td align="left">gstd</td><td align="left">git stash drop</td></tr>
+<tr><td align="left">gstl</td><td align="left">git stash list</td></tr>
+<tr><td align="left">gstp</td><td align="left">git stash pop</td></tr>
+<tr><td align="left">gsts</td><td align="left">git stash show --text</td></tr>
+<tr><td align="left">gstu</td><td align="left">git stash --include-untracked</td></tr>
+<tr><td align="left">gstall</td><td align="left">git stash --all</td></tr>
+<tr><td align="left">gsu</td><td align="left">git submodule update</td></tr>
+<tr><td align="left">gsw</td><td align="left">git switch</td></tr>
+<tr><td align="left">gswc</td><td align="left">git switch -c</td></tr>
+<tr><td align="left">gts</td><td align="left">git tag -s</td></tr>
+<tr><td align="left">gtv</td><td align="left">git tag | sort -V</td></tr>
+<tr><td align="left">gtl</td><td align="left">gtl(){ git tag --sort=-v:refname -n -l ${1}* }; noglob gtl</td></tr>
+<tr><td align="left">gunignore</td><td align="left">git update-index --no-assume-unchanged</td></tr>
+<tr><td align="left">gunwip</td><td align="left">git log -n 1 | grep -q -c &quot;--wip--&quot; &amp;&amp; git reset HEAD~1</td></tr>
+<tr><td align="left">gup</td><td align="left">git pull --rebase</td></tr>
+<tr><td align="left">gupv</td><td align="left">git pull --rebase -v</td></tr>
+<tr><td align="left">gupa</td><td align="left">git pull --rebase --autostash</td></tr>
+<tr><td align="left">gupav</td><td align="left">git pull --rebase --autostash -v</td></tr>
+<tr><td align="left">glum</td><td align="left">git pull upstream master</td></tr>
+<tr><td align="left">gwch</td><td align="left">git whatchanged -p --abbrev-commit --pretty=medium</td></tr>
+<tr><td align="left">gwip</td><td align="left">git add -A; git rm $(git ls-files --deleted) 2&gt; /dev/null; git commit --no-verify --no-gpg-sign -m &quot;--wip-- [skip ci]&quot;</td></tr>
+</tbody></table>
+<h3><a class="header" href="#deprecated-aliases" id="deprecated-aliases">Deprecated aliases</a></h3>
+<p>These are aliases that have been removed, renamed, or otherwise modified in a way that may, or may not, receive further support.</p>
+<table><thead><tr><th align="left">Alias</th><th align="left">Command</th><th align="left">Modification</th></tr></thead><tbody>
+<tr><td align="left">gap</td><td align="left"><code>git add --patch</code></td><td align="left">new alias <code>gapa</code></td></tr>
+<tr><td align="left">gcl</td><td align="left"><code>git config --list</code></td><td align="left">new alias <code>gcf</code></td></tr>
+<tr><td align="left">gdc</td><td align="left"><code>git diff --cached</code></td><td align="left">new alias <code>gdca</code></td></tr>
+<tr><td align="left">gdt</td><td align="left"><code>git difftool</code></td><td align="left">no replacement</td></tr>
+<tr><td align="left">ggpull</td><td align="left"><code>git pull origin $(current_branch)</code></td><td align="left">new alias <code>ggl</code> (<code>ggpull</code> still exists for now though)</td></tr>
+<tr><td align="left">ggpur</td><td align="left"><code>git pull --rebase origin $(current_branch)</code></td><td align="left">new alias <code>ggu</code> (<code>ggpur</code> still exists for now though)</td></tr>
+<tr><td align="left">ggpush</td><td align="left"><code>git push origin $(current_branch)</code></td><td align="left">new alias <code>ggp</code> (<code>ggpush</code> still exists for now though)</td></tr>
+<tr><td align="left">gk</td><td align="left"><code>gitk --all --branches</code></td><td align="left">now aliased to <code>gitk --all --branches</code></td></tr>
+<tr><td align="left">glg</td><td align="left"><code>git log --stat --max-count = 10</code></td><td align="left">now aliased to <code>git log --stat --color</code></td></tr>
+<tr><td align="left">glgg</td><td align="left"><code>git log --graph --max-count = 10</code></td><td align="left">now aliased to <code>git log --graph --color</code></td></tr>
+<tr><td align="left">gwc</td><td align="left"><code>git whatchanged -p --abbrev-commit --pretty = medium</code></td><td align="left">new alias <code>gwch</code></td></tr>
+</tbody></table>
+<h2><a class="header" href="#functions" id="functions">Functions</a></h2>
+<h3><a class="header" href="#current" id="current">Current</a></h3>
+<table><thead><tr><th align="left">Command</th><th align="left">Description</th></tr></thead><tbody>
+<tr><td align="left"><code>grename &lt;old&gt; &lt;new&gt;</code></td><td align="left">Rename <code>old</code> branch to <code>new</code>, including in origin remote</td></tr>
+<tr><td align="left">current_branch</td><td align="left">Return the name of the current branch</td></tr>
+<tr><td align="left">git_current_user_name</td><td align="left">Returns the <code>user.name</code> config value</td></tr>
+<tr><td align="left">git_current_user_email</td><td align="left">Returns the <code>user.email</code> config value</td></tr>
+</tbody></table>
+<h3><a class="header" href="#work-in-progress-wip" id="work-in-progress-wip">Work in Progress (WIP)</a></h3>
+<p>These features allow to pause a branch development and switch to another one (<em>&quot;Work in Progress&quot;</em>,  or wip). When you want to go back to work, just unwip it.</p>
+<table><thead><tr><th align="left">Command</th><th align="left">Description</th></tr></thead><tbody>
+<tr><td align="left">work_in_progress</td><td align="left">Echoes a warning if the current branch is a wip</td></tr>
+<tr><td align="left">gwip</td><td align="left">Commit wip branch</td></tr>
+<tr><td align="left">gunwip</td><td align="left">Uncommit wip branch</td></tr>
+</tbody></table>
+<h3><a class="header" href="#deprecated-functions" id="deprecated-functions">Deprecated functions</a></h3>
+<table><thead><tr><th align="left">Command</th><th align="left">Description</th><th align="left">Reason</th></tr></thead><tbody>
+<tr><td align="left">current_repository</td><td align="left">Return the names of the current remotes</td><td align="left">Didn't work properly. Use <code>git remote -v</code> instead (<code>grv</code> alias)</td></tr>
+</tbody></table>
+<h1><a class="header" href="#git-flow-plugin" id="git-flow-plugin">Git-Flow plugin</a></h1>
+<p>This plugin adds completion and aliases for the <a href="https://github.com/nvie/gitflow"><code>git-flow</code> command</a>.</p>
+<p>To use it, add <code>git-flow</code> to the plugins array in your zshrc file:</p>
+<pre><code class="language-zsh">plugins=(... git-flow)
+</code></pre>
+<h2><a class="header" href="#aliases-1" id="aliases-1">Aliases</a></h2>
+<table><thead><tr><th>Alias</th><th>Command</th><th>Description</th></tr></thead><tbody>
+<tr><td>gfl</td><td>git flow</td><td>Git-Flow command</td></tr>
+<tr><td>gfli</td><td>git flow init</td><td>Initialize git-flow repository</td></tr>
+<tr><td>gcd</td><td>git checkout develop</td><td>Check out develop branch</td></tr>
+<tr><td>gch</td><td>git checkout hotfix</td><td>Check out hotfix branch</td></tr>
+<tr><td>gcr</td><td>git checkout release</td><td>Check out release branch</td></tr>
+<tr><td>gflf</td><td>git flow feature</td><td>List existing feature branches</td></tr>
+<tr><td>gflh</td><td>git flow hotfix</td><td>List existing hotfix branches</td></tr>
+<tr><td>gflr</td><td>git flow release</td><td>List existing release branches</td></tr>
+<tr><td>gflfs</td><td>git flow feature start</td><td>Start a new feature: <code>gflfs &lt;name&gt;</code></td></tr>
+<tr><td>gflhs</td><td>git flow hotfix start</td><td>Start a new hotfix: <code>gflhs &lt;version&gt;</code></td></tr>
+<tr><td>gflrs</td><td>git flow release start</td><td>Start a new release: <code>gflrs &lt;version&gt;</code></td></tr>
+<tr><td>gflff</td><td>git flow feature finish</td><td>Finish feature: <code>gflff &lt;name&gt;</code></td></tr>
+<tr><td>gflfp</td><td>git flow feature publish</td><td>Publish feature: <code>gflfp &lt;name&gt;</code></td></tr>
+<tr><td>gflhf</td><td>git flow hotfix finish</td><td>Finish hotfix: <code>gflhf &lt;version&gt;</code></td></tr>
+<tr><td>gflrf</td><td>git flow release finish</td><td>Finish release: <code>gflrf &lt;version&gt;</code></td></tr>
+</tbody></table>
+<p><a href="https://github.com/nvie/gitflow/wiki/Command-Line-Arguments">More information about <code>git-flow</code> commands</a>.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-166861237-4', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
