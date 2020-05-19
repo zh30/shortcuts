@@ -1,0 +1,17 @@
+[book]
+authors = ["Zhang He"]
+language = "zh-CN"
+multilingual = false
+src = "src"
+title = "Shortcuts"
+description = "常用快捷键集合"
+
+[output.html]
+theme = "theme"
+mathjax-support = true
+preferred-dark-theme = "ayu"
+google-analytics = "UA-166861237-4"
+git-repository-url = "https://github.com/zhanghecool/shortcuts"
+
+[output.html.playpen]
+editable = true
